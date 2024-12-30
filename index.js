@@ -1,24 +1,31 @@
-import styled from "styled-components";
+import { endpointSearch } from "../../config/api";
+import axios from "axios";
+import { SEARCH_REQUEST, SEARCH_SUCCESS, SEARCH_FAILURE } from "./actionTypes";
 
-export const Header = styled.h1`
-  text-align: center;
-  margin-top: 120px;
-  color: #fff;
-  margin-bottom: 20px;
-  @media screen and (max-width: 425px) {
-    font-size: 30px;
+const fetchDataRequest = () => ({
+  type: SEARCH_REQUEST,
+});
+
+const fetchDataSuccess = (result, query) => ({
+  type: SEARCH_SUCCESS,
+  payload: {
+    articles: result,
+    query: query,
+  },
+});
+
+const fetchDataFailure = (error) => ({
+  type: SEARCH_FAILURE,
+  payload: error,
+});
+
+export const searchArticle = (query) => async (dispatch) => {
+  try {
+    dispatch(fetchDataRequest());
+    const response = await axios.get(endpointSearch(query));
+    const result = response.data;
+    dispatch(fetchDataSuccess(result, query));
+  } catch (error) {
+    dispatch(fetchDataFailure(error.message));
   }
-`;
-
-export const Container = styled.div`
-  width: 93%;
-  padding-right: (1.5rem, 0.75rem);
-  padding-left: (1.5rem, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
-`;
-
-export const card = {
-  marginTop: "10px",
-  marginBottom: "50px",
 };
