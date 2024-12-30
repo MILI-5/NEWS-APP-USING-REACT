@@ -1,22 +1,24 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const spinAnimation = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+export const Header = styled.h1`
+  text-align: center;
+  margin-top: 120px;
+  color: #fff;
+  margin-bottom: 20px;
+  @media screen and (max-width: 425px) {
+    font-size: 30px;
+  }
 `;
 
-export const SpinnerContainer = styled.div`
-  position: fixed;
-  top: 140px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+export const Container = styled.div`
+  width: 93%;
+  padding-right: (1.5rem, 0.75rem);
+  padding-left: (1.5rem, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
 `;
-  
-export const LoadingCircle = styled.div`
-  width: 40px;
-  height: 40px;
-  border: 4px solid #005abb;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: ${spinAnimation} 0.819672131147541s linear infinite;
-`;
+
+export const card = {
+  marginTop: "10px",
+  marginBottom: "50px",
+};
