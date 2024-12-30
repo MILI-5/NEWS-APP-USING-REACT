@@ -1,6 +1,6 @@
 # News App
 
-![](https://tse1.mm.bing.net/th?id=OIP.dVbWBouOc8X7pzMwq3q5PAHaFj&pid=Api&P=0&h=180)
+![](https://scr.wfcdn.de/18829/Microsoft-News-App-fuer-Windows-10-1530016828-0-12.jpg)
 
 This News App is powered by the GNews public API and provides users with the latest news articles from around the world. The app offers a user-friendly interface where news articles are organized by categories, allowing users to easily browse and read articles of their interest. 
 
